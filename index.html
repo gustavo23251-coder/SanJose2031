@@ -226,50 +226,114 @@
         <h2 class="font-serif text-3xl text-sage-700 font-semibold mt-1">Detalles del Evento</h2>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <!-- Tarjeta Lugar -->
-        <div class="p-5 rounded-2xl bg-linen-100/80 border border-linen-200 text-center flex flex-col items-center justify-between">
-          <div>
-            <div class="w-11 h-11 rounded-full bg-sage-100 text-sage-600 flex items-center justify-center mx-auto mb-3">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-              </svg>
-            </div>
-            <h3 class="font-serif text-xl font-semibold text-sage-700">Lugar</h3>
-            <p class="text-sm font-medium text-sage-800 mt-1">Villa Festa - Jardín de Eventos</p>
-            <p id="addressText" class="text-xs text-sage-600 mt-0.5">Av. Arancota 202, Tiabaya, Arequipa</p>
-          </div>
-          <div class="mt-4 flex flex-wrap justify-center gap-2">
-            <a href="https://maps.google.com/?q=-16.446155,-71.575879" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-full bg-sage-500 hover:bg-sage-600 text-linen-50 text-xs font-medium transition-colors">
-              Ver Mapa
-            </a>
-            <button id="copyAddressBtn" class="px-3.5 py-2 rounded-full border border-rattan-400/50 text-rattan-600 hover:bg-linen-200 text-xs font-medium transition-colors cursor-pointer">
-              Copiar
-            </button>
-          </div>
+      <!-- Tarjeta Lugar -->
+      <div class="p-5 sm:p-6 rounded-2xl bg-linen-100/80 border border-linen-200 text-center flex flex-col items-center">
+        <div class="w-11 h-11 rounded-full bg-sage-100 text-sage-600 flex items-center justify-center mx-auto mb-3">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <h3 class="font-serif text-xl font-semibold text-sage-700">Lugar</h3>
+        <p class="text-sm font-medium text-sage-800 mt-1">Villa Festa - Jardín de Eventos</p>
+        <p id="addressText" class="text-xs text-sage-600 mt-0.5">Av. Arancota 202, Tiabaya, Arequipa</p>
+        <div class="mt-4 flex flex-wrap justify-center gap-2">
+          <a href="https://maps.google.com/?q=-16.446155,-71.575879" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-full bg-sage-500 hover:bg-sage-600 text-linen-50 text-xs font-medium transition-colors">
+            Ver Mapa
+          </a>
+          <button id="copyAddressBtn" class="px-4 py-2 rounded-full border border-rattan-400/50 text-rattan-600 hover:bg-linen-200 text-xs font-medium transition-colors cursor-pointer">
+            Copiar Dirección
+          </button>
+        </div>
+      </div>
+
+      <!-- Código de Vestimenta (Alumnos y Padres) -->
+      <div class="pt-1 space-y-4">
+        <div class="text-center">
+          <h3 class="font-serif text-2xl font-semibold text-sage-700">Código de Vestimenta</h3>
         </div>
 
-        <!-- Tarjeta Vestimenta -->
-        <div class="p-5 rounded-2xl bg-linen-100/80 border border-linen-200 text-center flex flex-col items-center justify-between">
-          <div>
-            <div class="w-11 h-11 rounded-full bg-sage-100 text-sage-600 flex items-center justify-center mx-auto mb-3">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
-              </svg>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- Vestimenta del Alumno -->
+          <div class="p-5 rounded-2xl bg-linen-100/80 border border-linen-200 flex flex-col justify-between">
+            <div>
+              <div class="text-center mb-4">
+                <h4 class="font-serif text-xl font-semibold text-sage-700">Alumnos</h4>
+                <span class="inline-block mt-1 px-3 py-0.5 rounded-full bg-linen-200 text-rattan-600 text-[10px] uppercase tracking-[0.18em] font-semibold">
+                  Opcional
+                </span>
+              </div>
+
+              <ul class="space-y-3 text-left">
+                <!-- Zapatillas blancas -->
+                <li class="flex items-center gap-3">
+                  <span class="w-9 h-9 shrink-0 rounded-full bg-linen-200/80 text-rattan-600 flex items-center justify-center">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5V14c0-.8.5-1.5 1.2-1.8L8 10.5l2.5-3c.4-.5 1.1-.6 1.6-.2l1.8 1.4c1 .8 2.3 1.3 3.6 1.3H19c1.1 0 2 .9 2 2v4.5c0 .6-.4 1-1 1H4c-.6 0-1-.4-1-1z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 15.5h18"/>
+                    </svg>
+                  </span>
+                  <span class="text-xs sm:text-sm font-medium text-sage-800">Zapatillas blancas</span>
+                </li>
+
+                <!-- Pantalón color beige -->
+                <li class="flex items-center gap-3">
+                  <span class="w-9 h-9 shrink-0 rounded-full bg-linen-200/80 text-rattan-600 flex items-center justify-center">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M7 4h10l1 16h-4.2l-1.8-9-1.8 9H6L7 4z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M7 7.5h10"/>
+                    </svg>
+                  </span>
+                  <span class="text-xs sm:text-sm font-medium text-sage-800">Pantalón color beige</span>
+                </li>
+
+                <!-- Polo / Camisa color claro -->
+                <li class="flex items-center gap-3">
+                  <span class="w-9 h-9 shrink-0 rounded-full bg-linen-200/80 text-rattan-600 flex items-center justify-center">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 4l3 2 3-2 4 2.5-1.5 3.5-2-.8V20h-7V9.2l-2 .8L5 6.5 9 4z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v4"/>
+                    </svg>
+                  </span>
+                  <span class="text-xs sm:text-sm font-medium text-sage-800">Polo / Camisa color claro</span>
+                </li>
+              </ul>
             </div>
-            <h3 class="font-serif text-xl font-semibold text-sage-700">Vestimenta</h3>
-            <p class="text-sm font-medium text-sage-800 mt-1">Elegante / Cocktail de Jardín</p>
-            <p class="text-xs text-sage-600 mt-1 leading-relaxed">
-              Sugerimos calzado cómodo para áreas verdes y protección solar para disfrutar del jardín.
-            </p>
+
+            <!-- Nota de armonía -->
+            <div class="mt-4 p-3 rounded-xl bg-linen-200/75 border border-linen-300/60 text-left">
+              <p class="text-[11px] text-sage-700 leading-relaxed">
+                <strong class="text-rattan-600 uppercase tracking-wider text-[10px]">Nota:</strong>
+                Colores claros y tonos tierra para mantener armonía con el evento.
+              </p>
+            </div>
           </div>
-          <!-- Muestras de paleta de la fiesta -->
-          <div class="mt-4 flex items-center justify-center gap-2" title="Paleta de la celebración">
-            <span class="w-5 h-5 rounded-full bg-sage-500 border border-white shadow-xs"></span>
-            <span class="w-5 h-5 rounded-full bg-sage-300 border border-white shadow-xs"></span>
-            <span class="w-5 h-5 rounded-full bg-linen-200 border border-linen-300 shadow-xs"></span>
-            <span class="w-5 h-5 rounded-full bg-rattan-500 border border-white shadow-xs"></span>
+
+          <!-- Vestimenta de Padres -->
+          <div class="p-5 rounded-2xl bg-linen-100/80 border border-linen-200 text-center flex flex-col items-center justify-between">
+            <div>
+              <div class="w-11 h-11 rounded-full bg-sage-100 text-sage-600 flex items-center justify-center mx-auto mb-3">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                </svg>
+              </div>
+              <h4 class="font-serif text-xl font-semibold text-sage-700">Padres</h4>
+              <p class="text-sm font-semibold text-sage-800 mt-1.5">Sport Elegante / Cocktail de Jardín</p>
+              <p class="text-xs text-sage-600 mt-2 leading-relaxed">
+                Sugerimos calzado cómodo para áreas verdes y protección solar para disfrutar del jardín.
+              </p>
+            </div>
+
+            <!-- Muestras de paleta de la fiesta -->
+            <div class="mt-5 pt-3 border-t border-linen-200 w-full flex flex-col items-center gap-1.5">
+              <span class="text-[10px] uppercase tracking-widest text-rattan-500 font-medium">Paleta sugerida</span>
+              <div class="flex items-center justify-center gap-2" title="Paleta de la celebración">
+                <span class="w-5 h-5 rounded-full bg-sage-500 border border-white shadow-xs"></span>
+                <span class="w-5 h-5 rounded-full bg-sage-300 border border-white shadow-xs"></span>
+                <span class="w-5 h-5 rounded-full bg-linen-200 border border-linen-300 shadow-xs"></span>
+                <span class="w-5 h-5 rounded-full bg-rattan-400 border border-white shadow-xs"></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
