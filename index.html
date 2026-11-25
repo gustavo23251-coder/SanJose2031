@@ -356,64 +356,6 @@
       });
 
       // 3. CUENTA REGRESIVA EN VIVO
-            isPlayingMusic = false;
-            musicIconOn.classList.add('hidden');
-            musicIconOff.classList.remove('hidden');
-            return;
-          }
-
-          if (!isPlayingMusic) {
-            await Tone.start();
-            if (!synth) {
-              // Sintetizador cálido tipo piano eléctrico / arpa suave
-              const reverb = new Tone.Reverb({ decay: 4, wet: 0.45 }).toDestination();
-              synth = new Tone.PolySynth(Tone.Synth, {
-                oscillator: { type: 'sine' },
-                envelope: { attack: 0.15, decay: 0.4, sustain: 0.3, release: 1.8 }
-              }).connect(reverb);
-              synth.volume.value = -14;
-
-              // Secuencia armónica relajante en Sol Mayor
-              const notes = [
-                'G4', 'B4', 'D5', 'F#5',
-                'E4', 'G4', 'B4', 'D5',
-                'C4', 'E4', 'G4', 'B4',
-                'D4', 'F#4', 'A4', 'D5'
-              ];
-              let step = 0;
-              melodyLoop = new Tone.Loop((time) => {
-                synth.triggerAttackRelease(notes[step % notes.length], '2n', time);
-                step++;
-              }, '4n').start(0);
-
-              Tone.Transport.bpm.value = 76;
-            }
-            Tone.Transport.start();
-            isPlayingMusic = true;
-            musicIconOff.classList.add('hidden');
-            musicIconOn.classList.remove('hidden');
-          }
-        } catch (err) {
-          showToast('Toca el botón de música para activar el sonido');
-        }
-      }
-
-      musicBtn.addEventListener('click', () => toggleMusic(false));
-
-      // 3. PANTALLA DE BIENVENIDA (SOBRE)
-      const envelopeOverlay = document.getElementById('envelopeOverlay');
-      const openInviteBtn = document.getElementById('openInviteBtn');
-
-      openInviteBtn.addEventListener('click', () => {
-        envelopeOverlay.classList.add('opacity-0', 'pointer-events-none');
-        setTimeout(() => {
-          envelopeOverlay.style.display = 'none';
-        }, 700);
-        // Inicia música suave al abrir
-        toggleMusic(true);
-      });
-
-      // 4. CUENTA REGRESIVA EN VIVO
       // Fecha configurada: 19 de Diciembre de 2026 a las 9:30 AM (Hora Perú -05:00)
       const eventDate = new Date('2026-12-19T09:30:00-05:00').getTime();
 
@@ -441,7 +383,7 @@
       updateCountdown();
       setInterval(updateCountdown, 1000);
 
-      // 5. COPIAR DIRECCIÓN (Compatible con iFrames usando execCommand)
+      // 4. COPIAR DIRECCIÓN (Compatible con iFrames usando execCommand)
       const copyAddressBtn = document.getElementById('copyAddressBtn');
       const addressText = document.getElementById('addressText');
 
@@ -459,7 +401,7 @@
         }
       });
 
-      // 6. PARTÍCULAS / HOJITAS BOTÁNICAS SUTILES DE FONDO
+      // 5. PARTÍCULAS / HOJITAS BOTÁNICAS SUTILES DE FONDO
       const particlesContainer = document.getElementById('botanicalParticles');
       const leafColors = ['#5D7759', '#7B9876', '#96AB6C', '#A67C52'];
 
